@@ -4,7 +4,7 @@
  <title>Nicola Fern - Learning Technologist</title>
  <link href="http://nicolafern.github.io/atom.xml" rel="self"/>
  <link href="http://nicolafern.github.io/"/>
- <updated>2016-08-31T14:27:00+01:00</updated>
+ <updated>2016-08-31T14:34:57+01:00</updated>
  <id>http://nicolafern.github.io</id>
  <author>
    <name>Nicola Fern</name>
@@ -59,16 +59,86 @@
  </entry>
  
  <entry>
-   <title>My First Normal Post on Jekyll</title>
+   <title>Macrology</title>
    <link href="http://nicolafern.github.io/my-first-normal-post.html"/>
    <updated>2015-08-15T14:26:34+01:00</updated>
    <id>http://nicolafern.github.io/my-first-normal-post</id>
-   <content type="html">&lt;p&gt;Steve Austin: Astronaut. A man barely alive. Gentlemen… we can rebuild him. We have the technology. We have the capability to make the world’s first bionic man. Steve Austin will be that man. Better than he was before. Better. Stronger. Faster.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I’m no programmer, as I’ve probably mentioned before…However, I have been learning and improving somewhat in that regard lately, and I’m never afraid to have a bash and conjure up some Frankencode, poking it, stitching bits together and generally waving a lightning rod at it until it does what I want.&lt;/p&gt;
 
-&lt;p&gt;My name is Rhoda Morgenstern. I was born in the Bronx, New York in December of 1941. I’ve always felt responsible for World War II. The first thing I remember liking that liked me back was food. I had a bad puberty; it lasted seventeen years. I’m a high school graduate. I went to art school. My entrance exam was on a book of matches. I decided to move out of the house when I was twenty-four. My mother still refers to this as the time I ran away from home. Eventually, I ran to Minneapolis, where it’s cold and I figured I’d keep better. Now I’m back in Manhattan. New York, this is your last chance!&lt;/p&gt;
+&lt;p&gt;My latest adventure was brought to me by a colleague who wanted to be able to generate a censored version of an Excel workbook for sharing with others, which removed some of the columns containing personal information, while preserving tab names and as much formatting as possible.&lt;/p&gt;
 
-&lt;p&gt;Dr. David Banner: physician; scientist. Searching for a way to tap into the hidden strengths that all humans have… then an accidental overdose of gamma radiation alters his body chemistry. And now when David Banner grows angry or outraged, a startling metamorphosis occurs. The creature is driven by rage and pursued by an investigative reporter. The creature is wanted for a murder he didn’t commit. David Banner is believed to be dead, and he must let the world think that he is dead, until he can find a way to control the raging spirit that dwells within him.&lt;/p&gt;
+&lt;p&gt;I looked online and couldn’t find something exact, so I set about piecing something together from different pages and help sites.  I thought I’d share my resultant code here in case anyone else found it useful…&lt;/p&gt;
 
+&lt;p&gt;It’s worth noting one issue that drove me a bit batty:&lt;/p&gt;
+
+&lt;p&gt;The Worksheets(1), Worksheets(2), Worksheets(3)…numbering in the code refer to each sheet in the source workbook numerically from the sheet beginning at the left hand page…so you have to count sheets from left to right to find out which number your sheet is.  This is confusing since it effectively means each sheet has three potential names or labels:  This strict number order, the (name) - defaults to a sheet number (i.e. depending on which order the sheets are created in), and lastly the visible label on the tab - often whatever name you give it.  These last two can be changed by the user.  The sheet highlighted in the grab below has been given a (name) of test, has a Name of Sheet1, and then on screen it’s the last tab (Sheet 42) - so the reference in the Macro code below for it would end up being Worksheets(42).  It can be &lt;em&gt;very&lt;/em&gt; confusing. This workbook had those 42 tabs, and all the sheet references had to be worked out by counting on the screen - because the sheets had been created dynamically and moved around, the numbers they were assigned by the system didn’t correspond to their location.  As an example, I have a sheet labelled on the tab as Sheet 2, with a (name) of Sheet42, but in position 32 - so the reference would be Worksheets(32)!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/macrograb.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Anyway, rant over - here’s the code - I hope it saves at lease one person some frustration!&lt;/p&gt;
+
+&lt;p&gt;Note: When pasting the code, if the comments (lines preceded by ‘) wrap across multiple lines, comment extra lines out with ‘ or delete them as VBA doesn’t like multi-line comments.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Macro for duplicating selected columns from selected Excel worksheets into a new workbook&lt;/b&gt;&lt;/p&gt;
+
+&lt;codeblock&gt;
+'replace this with the name of your macro
+Sub CopyData()
+
+'defines your variable names as cell ranges
+Dim sourceColumnSh1 As Range, sourceColumnSh2 As Range, sourceColumnSh3 As Range, sourceColumnSh4 As Range, sourceColumnSh5 As Range
+
+'Tells excel how many sheets we want new workbooks to contain - replace 5 with any number
+Application.SheetsInNewWorkbook = 5
+
+'1st line creates the new workbook, and the subsequent lines declare names for each sheet
+Set targetBook = Workbooks.Add
+Sheets(&quot;Sheet1&quot;).Name = &quot;AU&quot;
+Sheets(&quot;Sheet2&quot;).Name = &quot;CCU&quot;
+Sheets(&quot;Sheet3&quot;).Name = &quot;CTU&quot;
+Sheets(&quot;Sheet4&quot;).Name = &quot;Comp Therapy&quot;
+Sheets(&quot;Sheet5&quot;).Name = &quot;Endo&quot;
+
+'The following codeblock assigns a cell range from the original workbook to the variable.
+'It also specifies the column destination in the new workbook (i.e. Col A means it will 
+'be pasted into the workbook starting at the first column.This is probably what you want)
+'Duplicate this block and the Destination line below for each sheet you want to copy
+'Change the cell range to reflect the columns you want to extract
+'To take the whole column, use &quot;A:A&quot; - but I found that this caused large file (on the order of 
+'36MB) issues when there were hidden cells (i.e. if a filter was used on the original file) so I 
+'recommend limiting the rows to a reasonable number. Change the '150' part to increase or 
+'decrease the rows copied.
+
+Set sourceColumnSh1 = Workbooks(&quot;YourSourceFileName.xlsm&quot;).Worksheets(1).Range(&quot;A1:A150,B1:B150,E1:E150,F1:F150,G1:G150,H1:H150,J1:J150,K1:K150,N1:N150&quot;)
+'Worksheets(1) in the line above refers to the source worksheet reference.
+Set targetBook = Worksheets(1).Columns(&quot;A&quot;)
+'Worksheets(1) in the line above refers to the destination worksheet reference.
+
+sourceColumnSh1.Copy Destination:=targetBook
+'The line above copies the cells from the first workbook into the new one.
+
+Set sourceColumnSh2 = Workbooks(&quot;YourSourceFilename.xlsm&quot;).Worksheets(2).Range(&quot;A1:A150,B1:B150,E1:E150,F1:F150,G1:G150,H1:H150,J1:J150,K1:K150,N1:N150&quot;)
+Set targetBook = Worksheets(2).Columns(&quot;A&quot;)
+
+sourceColumnSh2.Copy Destination:=targetBook
+
+Set sourceColumnSh3 = Workbooks(&quot;YourSourceFilename.xlsm&quot;).Worksheets(3).Range(&quot;A1:A150,B1:B150,E1:E150,F1:F150,G1:G150,H1:H150,J1:J150,K1:K150,N1:N150&quot;)
+Set targetBook = Worksheets(3).Columns(&quot;A&quot;)
+
+sourceColumnSh3.Copy Destination:=targetBook
+
+Set sourceColumnSh4 = Workbooks(&quot;YourSourceFilename.xlsm&quot;).Worksheets(4).Range(&quot;A1:A150,B1:B150,E1:E150,F1:F150,G1:G150,H1:H150,J1:J150,K1:K150,N1:N150&quot;)
+Set targetBook = Worksheets(4).Columns(&quot;A&quot;)
+
+sourceColumnSh4.Copy Destination:=targetBook
+
+Set sourceColumnSh5 = Workbooks(&quot;YourSourceFilename.xlsm&quot;).Worksheets(5).Range(&quot;A1:A150,B1:B150,E1:E150,F1:F150,G1:G150,H1:H150,J1:J150,K1:K150,N1:N150&quot;)
+Set targetBook = Worksheets(5).Columns(&quot;A&quot;)
+
+sourceColumnSh5.Copy Destination:=targetBook
+
+End Sub
+&lt;/codeblock&gt;
 </content>
  </entry>
  
