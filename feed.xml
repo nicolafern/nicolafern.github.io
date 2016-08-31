@@ -5,8 +5,8 @@
     <description>Portfolio, blog, thoughts and techniques</description>
     <link>http://nicolafern.github.io/</link>
     <atom:link href="http://nicolafern.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 31 Aug 2016 14:34:57 +0100</pubDate>
-    <lastBuildDate>Wed, 31 Aug 2016 14:34:57 +0100</lastBuildDate>
+    <pubDate>Wed, 31 Aug 2016 14:38:34 +0100</pubDate>
+    <lastBuildDate>Wed, 31 Aug 2016 14:38:34 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -107,7 +107,7 @@
 
 &lt;p&gt;&lt;b&gt;Macro for duplicating selected columns from selected Excel worksheets into a new workbook&lt;/b&gt;&lt;/p&gt;
 
-&lt;codeblock&gt;
+&lt;pre class=&quot;pre-scrollable&quot;&gt;&lt;code&gt;
 'replace this with the name of your macro
 Sub CopyData()
 
@@ -164,7 +164,7 @@ Set targetBook = Worksheets(5).Columns(&quot;A&quot;)
 sourceColumnSh5.Copy Destination:=targetBook
 
 End Sub
-&lt;/codeblock&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Sat, 15 Aug 2015 14:26:34 +0100</pubDate>
         <link>http://nicolafern.github.io/my-first-normal-post.html</link>

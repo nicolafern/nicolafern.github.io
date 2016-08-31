@@ -4,7 +4,7 @@
  <title>Nicola Fern - Learning Technologist</title>
  <link href="http://nicolafern.github.io/atom.xml" rel="self"/>
  <link href="http://nicolafern.github.io/"/>
- <updated>2016-08-31T14:34:57+01:00</updated>
+ <updated>2016-08-31T14:38:34+01:00</updated>
  <id>http://nicolafern.github.io</id>
  <author>
    <name>Nicola Fern</name>
@@ -81,7 +81,7 @@
 
 &lt;p&gt;&lt;b&gt;Macro for duplicating selected columns from selected Excel worksheets into a new workbook&lt;/b&gt;&lt;/p&gt;
 
-&lt;codeblock&gt;
+&lt;pre class=&quot;pre-scrollable&quot;&gt;&lt;code&gt;
 'replace this with the name of your macro
 Sub CopyData()
 
@@ -138,7 +138,7 @@ Set targetBook = Worksheets(5).Columns(&quot;A&quot;)
 sourceColumnSh5.Copy Destination:=targetBook
 
 End Sub
-&lt;/codeblock&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </content>
  </entry>
  
