@@ -3,10 +3,10 @@
   <channel>
     <title>Nicola Fern - Learning Technologist</title>
     <description>Portfolio, blog, thoughts and techniques</description>
-    <link>http://nicolafern.github.io/</link>
-    <atom:link href="http://nicolafern.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 31 Aug 2016 15:15:06 +0100</pubDate>
-    <lastBuildDate>Wed, 31 Aug 2016 15:15:06 +0100</lastBuildDate>
+    <link>https://nicolafern.github.io/</link>
+    <atom:link href="https://nicolafern.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 31 Aug 2016 15:29:16 +0100</pubDate>
+    <lastBuildDate>Wed, 31 Aug 2016 15:29:16 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -23,8 +23,8 @@
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/156244145&quot;&gt;Chemo dept time lapse&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/user49231758&quot;&gt;Nicola Fern&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Feb 2016 13:26:34 +0000</pubDate>
-        <link>http://nicolafern.github.io/Time-Warp.html</link>
-        <guid isPermaLink="true">http://nicolafern.github.io/Time-Warp.html</guid>
+        <link>https://nicolafern.github.io/Time-Warp.html</link>
+        <guid isPermaLink="true">https://nicolafern.github.io/Time-Warp.html</guid>
         
         <category>christie</category>
         
@@ -117,8 +117,8 @@ End Sub
 &lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Thu, 14 Jan 2016 13:26:34 +0000</pubDate>
-        <link>http://nicolafern.github.io/Macrology.html</link>
-        <guid isPermaLink="true">http://nicolafern.github.io/Macrology.html</guid>
+        <link>https://nicolafern.github.io/Macrology.html</link>
+        <guid isPermaLink="true">https://nicolafern.github.io/Macrology.html</guid>
         
         <category>macro</category>
         
