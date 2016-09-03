@@ -2,5 +2,8 @@
   background-color: #5D576B; }
 
 .logo {
-  width: 100px;
-  border: 2px; }
+  width: 350px; }
+
+.logotext {
+  font-family: Cookie;
+  color: #BFBCCB; }
