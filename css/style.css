@@ -1,9 +1,86 @@
+/* edits to bootstrap defaults */
+body {
+  background-color: #BBE5ED; }
+
+header {
+  background-color: #663399;
+  position: relative;
+  padding-top: 30px;
+  margin-left: 0px; }
+
+.container-fluid {
+  padding: 0px; }
+
+.fullwidthsecondarycolor {
+  background-color: #BFBCCB;
+  margin: 0px; }
+
+.fullwidthprimarycolor {
+  background-color: #5D576B;
+  margin: 0px; }
+
+/* centered columns styles */
+.row-centered {
+  text-align: center; }
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px; }
+
+.vertcent {
+  position: relative;
+  top: 60%;
+  transform: translateY(-40%); }
+
+/* specific to header section */
 .pagehead {
-  background-color: #5D576B; }
+  margin: 0; }
 
 .logo {
-  width: 350px; }
+  width: 350px;
+  padding: 20px;
+  float: right; }
 
 .logotext {
   font-family: Cookie;
+  font-size: 2em;
+  color: #5D576B;
+  float: left;
+  padding-left: 20px;
+  max-width: 350px; }
+
+.logocontainer {
+  align-content: center; }
+
+.navbar {
+  border: 0px; }
+
+.navbar-default {
+  background-color: #5D576B;
+  border-color: #5D576B; }
+
+.navbar-default .navbar-nav > li > a {
   color: #BFBCCB; }
+
+.navbar-nav > li > a {
+  text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25); }
+
+nav.navbar {
+  margin: 0; }
+  nav.navbar a {
+    color: #BFBCCB;
+    font-family: Cookie;
+    font-size: 32px;
+    text-decoration: none; }
+  nav.navbar .navbar-brand {
+    text-transform: none; }
+    nav.navbar .navbar-brand i {
+      transition: inherit;
+      transform: scale(1); }
+    nav.navbar .navbar-brand:hover i {
+      color: #ff6f6f;
+      transform: scale(1.35); }
