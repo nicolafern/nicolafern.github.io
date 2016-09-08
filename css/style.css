@@ -83,7 +83,8 @@ nav.navbar {
     text-decoration: none; }
   nav.navbar .navbar-brand {
     text-transform: none;
-    color: #BFBCCB; }
+    color: #BFBCCB;
+    font-size: 50px; }
     nav.navbar .navbar-brand i {
       transition: inherit;
       transform: scale(1); }
