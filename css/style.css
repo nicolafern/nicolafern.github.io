@@ -72,6 +72,26 @@ header {
 .navbar-nav > li > a {
   text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25); }
 
+nav.navbar {
+  margin: 0;
+  padding-right: 10px;
+  padding-left: 10px; }
+  nav.navbar a {
+    color: #BFBCCB;
+    font-family: Cookie;
+    font-size: 32px;
+    text-decoration: none; }
+  nav.navbar .navbar-brand {
+    text-transform: none;
+    color: #BFBCCB;
+    font-size: 50px; }
+    nav.navbar .navbar-brand i {
+      transition: inherit;
+      transform: scale(1); }
+    nav.navbar .navbar-brand:hover i {
+      color: #ff6f6f;
+      transform: scale(1.35); }
+
 /*!
  * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/)
  * Copyright 2013-2016 Start Bootstrap
