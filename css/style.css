@@ -1,12 +1,19 @@
 /* edits to bootstrap defaults */
 body {
-  background-color: #BBE5ED; }
+  background-color: #BBE5ED;
+  width: 100%;
+  height: 100%; }
 
 header {
   background-color: #663399;
   position: relative;
   padding-top: 30px;
   margin-left: 0px; }
+
+h1 {
+  font-family: 'Cookie';
+  color: #5D576B;
+  font-size: 4em; }
 
 .container-fluid {
   padding: 0px; }
@@ -53,6 +60,13 @@ header {
   padding-left: 20px;
   max-width: 350px; }
 
+.navbar-brand {
+  font-family: Cookie;
+  font-size: 4em;
+  color: #BFBCCB !important;
+  float: left;
+  padding-left: 20px; }
+
 .logocontainer {
   align-content: center;
   padding-top: 90px; }
@@ -72,15 +86,18 @@ header {
 .navbar-nav > li > a {
   text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25); }
 
+.site-footer {
+  background-color: #5D576B;
+  color: #BFBCCB;
+  font-family: 'Cookie';
+  font-size: 2em;
+  padding-left: 15px; }
+
 /*!
  * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-body {
-  width: 100%;
-  height: 100%; }
-
 html {
   width: 100%;
   height: 100%; }
@@ -88,13 +105,13 @@ html {
 @media (min-width: 767px) {
   .navbar {
     background-color: #5D576B !important;
-    padding: 20px 0;
+    padding: 20px 15px;
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out; }
 
   .top-nav-collapse {
-    padding: 0; } }
+    padding: 0px 15px; } }
 /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
 of those sections to manage the look and feel of the site. */
@@ -102,22 +119,22 @@ of those sections to manage the look and feel of the site. */
   height: 100%;
   padding-top: 150px;
   text-align: center;
-  background: #fff; }
+  background: #BBE5ED; }
 
 .work-section {
   height: 100%;
   padding-top: 150px;
   text-align: center;
-  background: #eee; }
+  background: #BFBCCB; }
 
 .history-section {
   height: 100%;
   padding-top: 150px;
   text-align: center;
-  background: #fff; }
+  background: #BBE5ED; }
 
 .contact-section {
   height: 100%;
   padding-top: 150px;
   text-align: center;
-  background: #eee; }
+  background: #BFBCCB; }
