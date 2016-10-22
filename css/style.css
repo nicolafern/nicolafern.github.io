@@ -15,6 +15,38 @@ h1 {
   color: #5D576B;
   font-size: 4em; }
 
+h2 {
+  font-family: 'Cookie';
+  color: #5D576B;
+  font-size: 3em; }
+
+a {
+  color: #5D576B; }
+
+a:hover {
+  color: #BFBCCB;
+  text-decoration: none; }
+
+.read-more {
+  background-color: #ff638f;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 0px;
+  font-size: 14px; }
+
+.read-more:hover {
+  background-color: #5D576B; }
+
+.tagitem {
+  font-size: 10px;
+  color: #5D576B;
+  background-color: #BFBCCB;
+  text-shadow: #BBE5ED;
+  padding: 2px; }
+
+.inner-guts {
+  text-align: left; }
+
 .container-fluid {
   padding: 0px; }
 
